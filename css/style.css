@@ -70,6 +70,12 @@ html, body {
 .navActive {
   background-color: #121417;
 }
+@media (max-width: 1038px) {
+  #navList li {
+    margin: 0 3em;
+    font-size: 1em;
+  }
+}
 
 
 /* Page contents: */
@@ -82,16 +88,34 @@ main {
 #mainSideLeft {
   background-image: linear-gradient(to left, #000, #121417);
   width: 10%;
+  transition: 150ms;
 }
 #mainSideRight {
   background-image: linear-gradient(to right, #000, #121417);
   width: 10%;
+  transition: 150ms;
 }
 #mainBody {
-  width: 80%;
-  
+  width: 100%;
   background-color: #121417 !important;
 }
+@media (max-width: 1038px) {
+  #mainSideLeft {
+    width: 5%;
+  }
+  #mainSideRight {
+    width: 5%;
+  }
+}
+@media (max-width: 800px) {
+  #mainSideLeft {
+    width: 0%;
+  }
+  #mainSideRight {
+    width: 0%;
+  }
+}
+
 
 /* Footer: */
 
