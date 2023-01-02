@@ -18,10 +18,27 @@ html, body {
 /* General purpose classes: */
 
 .vl {
-  border-left: 1px solid #FFF;
+  border-left: 1px solid #b3b3b3;
   height: 2em;
 }
-
+.imgFlipHorz {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+.imgFlipVert {
+  -webkit-transform: scaleY(-1);
+  transform: scaleY(-1);
+}
+.imgRot180 {
+  -webkit-transform: rotateZ(180deg);
+  transform: rotateZ(180deg);
+}
+.fixedRight {
+  right: 0px;
+}
+.fixedTop {
+  top: 0px;
+}
 
 /* Navbar stuff: */
 
@@ -67,6 +84,11 @@ html, body {
   background-color: #121417;
   color: #FFF !important;
 }
+.navbarOrnament {
+  position: fixed;
+  height: .8em;
+  margin: 0.4em;
+}
 .navActive {
   background-color: #121417;
 }
@@ -81,7 +103,7 @@ html, body {
 /* Page contents: */
 
 main {
-  height: calc(100vh - 6em) !important;
+  height: calc(100vh - 5.5em) !important;
   display: flex;
   flex-direction: row;
 }
@@ -122,6 +144,36 @@ main {
 #footer {
   width: 100%;
   background-color: #000;
-  height: 2em !important;
+  height: 1.5em !important;
   bottom: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.footerElementFlexVert {
+  height: 1.5em !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.footerElementFlexHorz {
+  height: 1.5em !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#footerYearVersionText {
+  font-size: .8em;
+  margin: 0 0.4em;
+  padding: 0;
+  color: #ececec;
+}
+#footerHekusaSignature {
+  height: .8em;
+  margin: 0 0.4em;
+}
+.footerOrnament {
+  height: .8em;
+  margin: 0 0.4em;
 }
