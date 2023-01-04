@@ -139,6 +139,46 @@ main {
 }
 
 
+/* About section: */
+
+#aboutSection {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: auto;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+#aboutSection h1 {
+  margin: 1em auto 0.5em auto;
+}
+#aboutSection h2 {
+  margin: 0 auto 0.5em auto;
+  font-weight: normal;
+}
+#HxdceLogo {
+  width: 8em;
+  margin: 0 auto;
+}
+.professionFirstBreak {
+  display: none;
+}
+.professionSecondBreak {
+  display: none;
+}
+@media (max-width: 800px) {
+  .professionFirstBreak {
+    display: block;
+  }
+}
+@media (max-width: 1200px) {
+  .professionSecondBreak {
+    display: block;
+  }
+}
+
+
 /* Footer: */
 
 #footer {
