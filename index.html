@@ -13,6 +13,58 @@
 </head>
 
 <body>
+
+
+    <script>
+        function makeHttpObject() {
+        try {return new XMLHttpRequest();}
+        catch (error) {}
+        try {return new ActiveXObject("Msxml2.XMLHTTP");}
+        catch (error) {}
+        try {return new ActiveXObject("Microsoft.XMLHTTP");}
+        catch (error) {}
+
+        throw new Error("Could not create HTTP request object.");
+        }
+
+        /*
+        var request = makeHttpObject();
+        request.open("GET", "./html/test.html", true);
+        request.send(null);
+        request.onreadystatechange = function() {
+        if (request.readyState == 4)
+            var contents = request.responseText;
+            var a = document.getElementById("mainBody");
+            a.innerHTML = contents;
+        };
+        */
+
+        function loadAboutSection() {
+            var request = makeHttpObject();
+            request.open("GET", "./html/aboutSection.html", true);
+            request.send(null);
+            request.onreadystatechange = function() {
+            if (request.readyState == 4)
+                var contents = request.responseText;
+                var a = document.getElementById("mainBody");
+                a.innerHTML = contents;
+            };
+        }
+
+        function testClick() {
+            var request = makeHttpObject();
+            request.open("GET", "./html/test.html", true);
+            request.send(null);
+            request.onreadystatechange = function() {
+            if (request.readyState == 4)
+                var contents = request.responseText;
+                var a = document.getElementById("mainBody");
+                a.innerHTML = contents;
+            };
+        }
+    </script>
+
+
     <div id="bodyContents">
         <!-- Basically the contents of the body, separated into its own div. -->
         <!-- Probably best to keep this separated from the body element itself. -->
@@ -20,9 +72,9 @@
         <nav id="navbar">
             <img class="navbarOrnament imgFlipHorz" src="./images/CornerOrnament.svg"></img>
             <ul id="navList">
-                <a href="#about" class="navActive"><li>About</li></a>
+                <a onclick="loadAboutSection()" class="navActive"><li>About</li></a>
                 <div class="vl"></div>
-                <a href="#work"><li>Work</li></a>
+                <a onclick="testClick()"><li>Work</li></a>
                 <div class="vl"></div>
                 <a href="#info"><li>Info</li></a>
                 <div class="vl"></div>
