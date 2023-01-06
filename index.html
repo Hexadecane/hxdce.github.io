@@ -13,58 +13,6 @@
 </head>
 
 <body>
-
-
-    <script>
-        function makeHttpObject() {
-        try {return new XMLHttpRequest();}
-        catch (error) {}
-        try {return new ActiveXObject("Msxml2.XMLHTTP");}
-        catch (error) {}
-        try {return new ActiveXObject("Microsoft.XMLHTTP");}
-        catch (error) {}
-
-        throw new Error("Could not create HTTP request object.");
-        }
-
-        /*
-        var request = makeHttpObject();
-        request.open("GET", "./html/test.html", true);
-        request.send(null);
-        request.onreadystatechange = function() {
-        if (request.readyState == 4)
-            var contents = request.responseText;
-            var a = document.getElementById("mainBody");
-            a.innerHTML = contents;
-        };
-        */
-
-        function loadAboutSection() {
-            var request = makeHttpObject();
-            request.open("GET", "./html/aboutSection.html", true);
-            request.send(null);
-            request.onreadystatechange = function() {
-            if (request.readyState == 4)
-                var contents = request.responseText;
-                var a = document.getElementById("mainBody");
-                a.innerHTML = contents;
-            };
-        }
-
-        function testClick() {
-            var request = makeHttpObject();
-            request.open("GET", "./html/test.html", true);
-            request.send(null);
-            request.onreadystatechange = function() {
-            if (request.readyState == 4)
-                var contents = request.responseText;
-                var a = document.getElementById("mainBody");
-                a.innerHTML = contents;
-            };
-        }
-    </script>
-
-
     <div id="bodyContents">
         <!-- Basically the contents of the body, separated into its own div. -->
         <!-- Probably best to keep this separated from the body element itself. -->
@@ -72,13 +20,13 @@
         <nav id="navbar">
             <img class="navbarOrnament imgFlipHorz" src="./images/CornerOrnament.svg"></img>
             <ul id="navList">
-                <a onclick="loadAboutSection()" class="navActive"><li>About</li></a>
+                <button onclick="loadAboutSection()" class="navButton navActive"><li>About</li></button>
                 <div class="vl"></div>
-                <a onclick="testClick()"><li>Work</li></a>
+                <button onclick="loadWorkSection()" class="navButton"><li>Work</li></button>
                 <div class="vl"></div>
-                <a href="#info"><li>Info</li></a>
+                <button onclick="loadInfoSection()" class="navButton"><li>Info</li></button>
                 <div class="vl"></div>
-                <a href="#contact"><li>Contact</li></a>
+                <button onclick="loadContactSection()" class="navButton"><li>Contact</li></button>
             </ul>
             <img class="navbarOrnament fixedRight fixedTop" src="./images/CornerOrnament.svg"></img>
         </nav>
@@ -86,18 +34,7 @@
         <main>
             <!-- Main page contents go here. -->
             <div id="mainSideLeft"></div>
-            <div id="mainBody">
-                <div id="aboutSection">
-                    <img id="HxdceLogo" src="./images/HxdceLogo.svg"></img>
-                    <h1>I'm Hxdce.</h1>
-                    <h2>
-                        I am a <br class="professionFirstBreak">
-                        <span style="color: #ff1f41;">Graphic Designer</span>,<br class="professionFirstBreak">
-                        <span style="color: #00ff82;">Multimedia Artist</span>,<br class="professionSecondBreak"> and
-                        <span style="color: #00c7fd;">Game Developer</span>
-                    </h2>
-                </div>
-            </div>
+            <div id="mainBody"></div>
             <div id="mainSideRight"></div>
         </main>
 
@@ -113,6 +50,14 @@
         </footer>
         <script src="js/footerText.js"></script>
     </div>
+    <script src="js/index.js"></script>
+    <script>
+        // Load this first of course...
+        loadAboutSection();
+
+        // Todo: possibly make it so which section to load is controlled by a "#id"
+        // appended to the site URL?
+    </script>
 </body>
 
 </html>
