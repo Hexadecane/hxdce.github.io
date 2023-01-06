@@ -9,6 +9,7 @@ function makeHttpObject() {
     throw new Error("Could not create HTTP request object.");
 }
 
+
 function loadSectionForBody(url) {
     var request = makeHttpObject();
     request.open("GET", url, true);
@@ -21,21 +22,25 @@ function loadSectionForBody(url) {
     };
 }
 
-function loadAboutSection() {
-    loadSectionForBody("./html/aboutSection.html");
+
+function setActiveNavButton(buttonID) {
+    // Remove the navActive class from the current active nav button.
+    let navButtons = document.getElementsByClassName("navButton");
+    for (let i of navButtons) {
+        if (i.classList.contains("navActive")) {
+            i.classList.remove("navActive");
+        }
+    }
+    // Replace it with the newly selected one.
+    document.getElementById(buttonID).classList.add("navActive");
 }
 
-function loadWorkSection() {
-    loadSectionForBody("./html/workSection.html");
+
+function loadSection(url, buttonID) {
+    loadSectionForBody(url);
+    setActiveNavButton(buttonID);
 }
 
-function loadInfoSection() {
-    loadSectionForBody("./html/infoSection.html");
-}
-
-function loadContactSection() {
-    loadSectionForBody("./html/contactSection.html");
-}
 
 function testClick() {
     var request = makeHttpObject();
