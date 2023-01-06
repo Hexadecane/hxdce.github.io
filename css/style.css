@@ -17,10 +17,7 @@ html, body {
 
 /* General purpose classes: */
 
-.vl {
-  border-left: 1px solid #b3b3b3;
-  height: 2em;
-}
+
 .imgFlipHorz {
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
@@ -40,6 +37,7 @@ html, body {
   top: 0px;
 }
 
+
 /* Navbar stuff: */
 
 #navbar {
@@ -49,6 +47,10 @@ html, body {
   left: 0;
   background-color: #000;
   z-index: 999;
+}
+.navVL {
+  border-left: 1px solid #b3b3b3;
+  height: 1.5em;
 }
 #navList {
   margin: 0;
@@ -62,8 +64,8 @@ html, body {
 }
 #navList li {
   font-family: AlteDIN, "Bahnschrift", Arial, sans-serif;
-  margin: 0 4em;
-  font-size: 1.25em;
+  margin: 0 3em;
+  font-size: 1.5em;
 }
 .navbarOrnament {
   position: fixed;
@@ -172,6 +174,7 @@ main {
   }
 }
 
+
 /* "JavaScript didn't load or encountered an error" section: */
 
 #noJSSection {
@@ -261,6 +264,36 @@ main {
   flex-direction: column;
   justify-content: center;
 }
+
+
+/* Contact Section: */
+
+#contactSection h1 {
+  font-weight: normal;
+}
+.contactSectionSubsection {
+  padding: 2em;
+}
+.contactRow {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  margin: 0 auto;
+}
+.contactRow img {
+  width: 1.5em;
+  height: 1.5em;
+  padding: 0.5em;
+}
+#profileLink {
+  text-decoration: none;
+  color: #00c7fd !important;
+  padding: 2em 2em;
+  transition: 150ms;
+  font-size: 1.25em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 
 /* Footer: */
 
