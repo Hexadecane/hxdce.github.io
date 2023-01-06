@@ -143,6 +143,17 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  animation: bodyFadeInAnim ease-in-out 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes bodyFadeInAnim {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 @media (max-width: 1038px) {
   #mainSideLeft {
@@ -159,6 +170,12 @@ main {
   #mainSideRight {
     width: 0%;
   }
+}
+
+/* "JavaScript didn't load or encountered an error" section: */
+
+#noJSSection {
+  width: 85%;
 }
 
 
