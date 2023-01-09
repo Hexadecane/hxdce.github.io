@@ -36,6 +36,17 @@ html, body {
 .fixedTop {
   top: 0px;
 }
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: #000;
+  
+}
+::-webkit-scrollbar-thumb {
+  background-color: #414245;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #67686a;
+}
 
 
 /* Navbar stuff: */
@@ -109,6 +120,10 @@ html, body {
   .navbarOrnament {
     visibility: hidden;
   }
+  #navList li {
+    margin: 0;
+    width: calc(25vw - 1px);
+  }
 }
 
 
@@ -131,6 +146,7 @@ main {
 }
 #mainBody {
   width: 100%;
+  height: 100%;
   background-color: #121417 !important;
 }
 #mainBody hr {
@@ -142,9 +158,6 @@ main {
   height: 100%;
   text-align: center;
   margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   animation: bodyFadeInAnim ease-in-out 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
@@ -185,7 +198,6 @@ main {
 /* About section: */
 
 #aboutSection {
-  /* Probably redundant but I'll leave this here for now. */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -221,11 +233,20 @@ main {
 
 /* Info section: */
 
+#infoSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 #infoSection h1 {
   font-weight: normal;
+  margin-top: 0.67em;
+  margin-bottom: 0.33em;
 }
 .infoSectionSubsection {
-  padding: 2em;
+  padding: 0 2em 2em 2em;
+  height: auto;
+  overflow: auto;
 }
 #skillsGrid {
   display: grid;
@@ -264,10 +285,43 @@ main {
   flex-direction: column;
   justify-content: center;
 }
+@media (max-width: 1400px) {
+  #infoSection hr {
+    width: 67%;
+  }
+  #skillsGrid {
+    width: 67%;
+  }
+  #softwareProficiencySection {
+    width: 67%;
+  }
+  .infoSectionSubsection {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 1038px) {
+  #skillsGrid {
+    width: 80%;
+  }
+  #softwareProficiencySection {
+    width: 80%;
+    flex-direction: column;
+    align-items: center;
+  }
+  #skillsGrid {
+    grid-template-columns: auto auto;
+  }
+}
 
 
 /* Contact Section: */
 
+#contactSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 #contactSection h1 {
   font-weight: normal;
 }
@@ -284,16 +338,40 @@ main {
   width: 1.5em;
   height: 1.5em;
   padding: 0.5em;
+  transition: 150ms;
 }
 #profileLink {
   text-decoration: none;
   color: #00c7fd !important;
-  padding: 2em 2em;
+  padding: 2em;
   transition: 150ms;
   font-size: 1.25em;
   font-family: Arial, Helvetica, sans-serif;
 }
-
+#profileLink:hover {
+  background-color: #FFF;
+  text-decoration: initial;
+  color: #ff1f41 !important;
+  transition: 150ms;
+}
+#profileLink:hover img {
+  filter: invert(1);
+  transition: 150ms;
+}
+@media (max-width: 1038px) {
+  #contactSection hr {
+    width: 67%;
+  }
+}
+@media (max-width: 640px) {
+  #profileLink {
+    padding: 1em;
+    font-size: 1em;
+  }
+  #contactSection hr {
+    width: 75%;
+  }
+}
 
 /* Footer: */
 
