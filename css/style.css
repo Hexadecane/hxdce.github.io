@@ -290,14 +290,14 @@ main {
   width: 100%;
   height: 90%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
 }
 #workTitle {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 90%;
+  width: 70vw;
   margin: 0 auto;
 }
 #workTitleSide {
@@ -333,19 +333,21 @@ main {
 }
 #workMain {
   width: 70vw;
+  margin: 0 auto;
   height: auto;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
 }
 #workProjectImageViewer {
   background-color: black;
   margin: 0 auto;
-  width: 90%;
-  max-height: 60vh;
+  width: 95%;
+  height: 60vh;
   display: flex;
   flex-direction: column;
   position: relative;
-  overflow: auto;
 }
 .workProjectImageNavButton {
   text-decoration: none;
@@ -360,11 +362,16 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  transition: 150ms;
+  z-index: 999;
 }
 .workProjectImageNavButton:hover {
-  opacity: 0.5;
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.25);
+  filter: invert(1);
   color: #FFF;
+}
+.workProjectImageNavButton:active {
+  background: none;
 }
 #workProjectImageNavButtonLeft {
   left: 0;
@@ -373,8 +380,19 @@ main {
   right: 0;
 }
 #workProjectCurrImage {
-  max-height: 60vh;
-  object-fit: scale-down;
+  height: 50vh;
+}
+.workProjectImageActive {
+  max-height: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.workProjectImageInactive {
+  display: none;
 }
 #workProjectImageDotArray {
   background-color: none;
@@ -414,7 +432,7 @@ main {
 }
 */
 #workProjectImageHR {
-  width: 70vw !important;
+  width: 95%;
 }
 #workProjectDescription {
   width: 90%;

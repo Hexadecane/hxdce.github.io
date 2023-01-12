@@ -12,18 +12,23 @@
     </ul>
     <hr id="workProjectImageHR">
     <div id="workContents">
+        <div id="workTitle">
+            <div id="workTitleSide"><button class="workTitleSideButton"><p>PREV PROJECT<br>&lt;&lt;</p></button></div>
+            <div id="workTitleText"><h1>Some Project</h1><h2>(2022 - Present)</h2></div>
+            <div id="workTitleSide"><button class="workTitleSideButton"><p>NEXT PROJECT<br>&gt;&gt;</p></button></div>
+        </div>
         <div id="workMain">
-            <div id="workTitle">
-                <div id="workTitleSide"><button class="workTitleSideButton"><p>&lt;&lt; PREV PROJECT</p></button></div>
-                <div id="workTitleText"><h1>Some Project</h1><h2>(2022 - Present)</h2></div>
-                <div id="workTitleSide"><button class="workTitleSideButton"><p>NEXT PROJECT &gt;&gt;</p></button></div>
-            </div>
             <div id="workProjectImageViewer">
-                <button id="workProjectImageNavButtonLeft" class="workProjectImageNavButton">❮</button>
-                <img id="workProjectCurrImage" src="./images/projects/INERTIA1.png">
-                <button id="workProjectImageNavButtonRight" class="workProjectImageNavButton">❯</button>
+                <button id="workProjectImageNavButtonLeft" class="workProjectImageNavButton" onclick="workSectionPrevImageSlide()">❮</button>
+                <div id="workProjectCurrImage">
+                    <img class="workProjectImageActive" src="./images/projects/INERTIA1.png">
+                    <img class="workProjectImageInactive" src="./images/projects/INERTIA2.png">
+                    <img class="workProjectImageInactive" src="./images/projects/INERTIA3.png">
+                    <img class="workProjectImageInactive" src="./images/projects/INERTIA4.png">
+                </div>
+                <button id="workProjectImageNavButtonRight" class="workProjectImageNavButton" onclick="workSectionNextImageSlide()">❯</button>
                 <div id="workProjectImageDotArray">
-                    <div id="workProjectImageDotActive" class="workProjectImageDot"></div>
+                    <div id="workProjectImageDotActive" class="workProjectImageDot" ></div>
                     <div class="workProjectImageDot"></div>
                     <div class="workProjectImageDot"></div>
                     <div class="workProjectImageDot"></div>

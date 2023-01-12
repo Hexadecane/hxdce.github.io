@@ -53,3 +53,37 @@ function testClick() {
         a.innerHTML = contents;
     };
 }
+
+
+function workSectionNextImageSlide() {
+    let images = document.getElementById("workProjectCurrImage");
+    let newIndex = 0;
+    let imageCt = images.children.length;
+
+    for (let i = 0; i < imageCt; i++) {
+        let curr = images.children[i];
+        if (curr.className === 'workProjectImageActive') {
+            newIndex = (i >= imageCt - 1) ? 0 : i + 1;
+            curr.className = 'workProjectImageInactive';
+        }
+    }
+    console.log(newIndex);
+    images.children[newIndex].className = 'workProjectImageActive';
+}
+
+
+function workSectionPrevImageSlide() {
+    let images = document.getElementById("workProjectCurrImage");
+    let newIndex = 0;
+    let imageCt = images.children.length;
+
+    for (let i = 0; i < imageCt; i++) {
+        let curr = images.children[i];
+        if (curr.className === 'workProjectImageActive') {
+            newIndex = (i < 1) ? imageCt - 1 : i - 1;
+            curr.className = 'workProjectImageInactive';
+        }
+    }
+    console.log(newIndex);
+    images.children[newIndex].className = 'workProjectImageActive';
+}
