@@ -364,6 +364,7 @@ main {
   justify-content: center;
   transition: 150ms;
   z-index: 999;
+  text-shadow: 0px 0px 8px #121417;
 }
 .workProjectImageNavButton:hover {
   background-color: rgba(0, 0, 0, 0.25);
@@ -411,11 +412,13 @@ main {
   height: 1em;
   margin: 0 0.5em;
   background-color: #FFF;
-  opacity: 0.25;
+  opacity: 0.33;
   border-radius: 100%;
+  box-shadow: 0px 0px 8px #121417;
+  transition: 150ms;
 }
 #workProjectImageDotActive {
-  opacity: 0.75 !important;
+  opacity: 0.9 !important;
 }
 /* Gonna try an image carousel instead...
 #workProjectImageViewerList {
