@@ -331,6 +331,14 @@ main {
 .workTitleSideButton:active {
   background: none;
 }
+.workTitleSideButtonDisabled {
+  text-decoration: none;
+  border: none;
+  background: none;
+  height: 100%;
+  color: #414245;
+  transition: 150ms;
+}
 #workMain {
   width: 70vw;
   margin: 0 auto;
@@ -381,7 +389,7 @@ main {
   right: 0;
 }
 #workProjectCurrImage {
-  height: 50vh;
+  height: 45vh;
 }
 .workProjectImageActive {
   max-height: 100%;
@@ -427,7 +435,19 @@ main {
   width: 90%;
   margin: 0 auto;
 }
-
+.workProjectGenericUL {
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 0;
+  color: #BBB;
+  width: 67%;
+  margin: 0 auto;
+  text-align: center;
+  list-style-position: inside;
+}
+.workProjectGenericUL li {
+  margin: 0.15em auto;
+}
 
 /* Info section: */
 

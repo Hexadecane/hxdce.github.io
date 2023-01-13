@@ -1,4 +1,4 @@
-function makeHttpObject() {
+function makeHTTPObject() {
     try {return new XMLHttpRequest();}
     catch (error) {}
     try {return new ActiveXObject("Msxml2.XMLHTTP");}
@@ -11,14 +11,15 @@ function makeHttpObject() {
 
 
 function loadSectionForBody(url) {
-    var request = makeHttpObject();
+    let request = makeHTTPObject();
     request.open("GET", url, true);
     request.send(null);
     request.onreadystatechange = function() {
-    if (request.readyState == 4)
-        var contents = request.responseText;
-        var a = document.getElementById("mainBody");
-        a.innerHTML = contents;
+        if (request.readyState == 4) {
+            var contents = request.responseText;
+            var a = document.getElementById("mainBody");
+            a.innerHTML = contents;
+        }
     };
 }
 
@@ -42,17 +43,58 @@ function loadSection(url, buttonID) {
 }
 
 
-function testClick() {
-    var request = makeHttpObject();
-    request.open("GET", "./html/test.html", true);
+let f;
+function loadEntryForWorkSection(category, index) {
+    if (index < 0) {  // Basic error checking.
+        console.warn('Invalid work section index!');
+        return;
+    }
+    let url;
+    switch (category) {
+        case 'graphicDesign':
+            url = './html/workSectionEntries/graphicDesign.html';
+            break;
+        case '2DArt':
+            url = './html/workSectionEntries/2DArt.html';
+            break;
+        case '3DArt':
+            url = './html/workSectionEntries/3DArt.html';
+            break;
+        case 'gameDev':
+            url = './html/workSectionEntries/gameDev.html';
+            break;
+        case 'softwareDev':
+            url = './html/workSectionEntries/softwareDev.html';
+            break;
+        default:
+            console.warn('Invalid work section category!');
+            return;
+    }
+    // This code below works similarly to the "loadSectionForBody" function.
+    let request = makeHTTPObject();
+    request.open("GET", url, true);
     request.send(null);
     request.onreadystatechange = function() {
-    if (request.readyState == 4)
-        var contents = request.responseText;
-        var a = document.getElementById("mainBody");
-        a.innerHTML = contents;
+        if (request.readyState == 4) {
+            var contents = request.responseText;
+            if (contents.length <= 0) {
+                console.warn('Contents failed to load, or HTML file was empty!');
+                return;
+            }
+            contents = contents.split('<split>');
+            console.log(contents);
+            if (index > contents.length - 1) {  // Index is greater than contents length...
+                console.warn('Invalid work section index!');
+                return;
+            }
+            var target = document.getElementById('workContents');
+            f = contents;
+            target.outerHTML = contents[index];
+        }
     };
 }
+// Short alias for the function above:
+let loadWSE = (category, index) => loadEntryForWorkSection(category, index);
 
 
 function workSectionAdvanceImageSlide(direction) {
