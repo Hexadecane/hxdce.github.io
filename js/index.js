@@ -55,7 +55,7 @@ function testClick() {
 }
 
 
-function workSectionNextImageSlide() {
+function workSectionAdvanceImageSlide(direction) {
     let images = document.getElementById("workProjectCurrImage");
     let newIndex = 0;
     let imageCt = images.children.length;
@@ -63,27 +63,31 @@ function workSectionNextImageSlide() {
     for (let i = 0; i < imageCt; i++) {
         let curr = images.children[i];
         if (curr.className === 'workProjectImageActive') {
-            newIndex = (i >= imageCt - 1) ? 0 : i + 1;
+            if (direction) {
+                newIndex = (i >= imageCt - 1) ? 0 : i + 1;
+            }
+            else {
+                newIndex = (i < 1) ? imageCt - 1 : i - 1;
+            }
             curr.className = 'workProjectImageInactive';
         }
     }
-    console.log(newIndex);
     images.children[newIndex].className = 'workProjectImageActive';
+    workSectionSetActiveImageDot(newIndex);
 }
 
 
-function workSectionPrevImageSlide() {
-    let images = document.getElementById("workProjectCurrImage");
-    let newIndex = 0;
-    let imageCt = images.children.length;
-
-    for (let i = 0; i < imageCt; i++) {
-        let curr = images.children[i];
-        if (curr.className === 'workProjectImageActive') {
-            newIndex = (i < 1) ? imageCt - 1 : i - 1;
-            curr.className = 'workProjectImageInactive';
+function workSectionSetActiveImageDot(index) {
+    let dots = document.getElementById("workProjectImageDotArray");
+    if ((index < 0) || (index >= dots.children.length)) {
+        console.warn("Invalid dot index for work section image dots!");
+        return;
+    }
+    let s = 'workProjectImageDotActive';
+    for (let i of dots.children) {
+        if (i.id == s) {
+            i.id = '';
         }
     }
-    console.log(newIndex);
-    images.children[newIndex].className = 'workProjectImageActive';
+    dots.children[index].id = s;
 }
