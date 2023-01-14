@@ -405,6 +405,9 @@ main {
   top: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  animation: bodyFadeInAnim ease-in-out 0.15s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 .workProjectImageInactive {
   display: none;
