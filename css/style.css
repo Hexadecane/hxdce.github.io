@@ -295,6 +295,9 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: start;
+  animation: bodyFadeInAnim ease-in-out 0.33s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 #workTitle {
   display: flex;
