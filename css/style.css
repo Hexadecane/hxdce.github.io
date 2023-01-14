@@ -285,6 +285,9 @@ main {
   background-color: #121417;
   color: #FFF !important;
 }
+.workNavActive {
+  background-color: #121417;
+}
 #workContents {
   margin: 0 auto;
   width: 100%;

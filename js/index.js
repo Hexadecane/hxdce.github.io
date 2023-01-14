@@ -1,23 +1,27 @@
+// Global variable for what index in the work section we're in. 
+// Resets whenever a new section is selected.
+let workSectionIndex = 0;
+
 function makeHTTPObject() {
     try {return new XMLHttpRequest();}
     catch (error) {}
-    try {return new ActiveXObject("Msxml2.XMLHTTP");}
+    try {return new ActiveXObject('Msxml2.XMLHTTP');}
     catch (error) {}
-    try {return new ActiveXObject("Microsoft.XMLHTTP");}
+    try {return new ActiveXObject('Microsoft.XMLHTTP');}
     catch (error) {}
 
-    throw new Error("Could not create HTTP request object.");
+    throw new Error('Could not create HTTP request object.');
 }
 
 
 function loadSectionForBody(url) {
     let request = makeHTTPObject();
-    request.open("GET", url, true);
+    request.open('GET', url, true);
     request.send(null);
     request.onreadystatechange = function() {
         if (request.readyState == 4) {
             var contents = request.responseText;
-            var a = document.getElementById("mainBody");
+            var a = document.getElementById('mainBody');
             a.innerHTML = contents;
         }
     };
@@ -26,14 +30,14 @@ function loadSectionForBody(url) {
 
 function setActiveNavButton(buttonID) {
     // Remove the navActive class from the current active nav button.
-    let navButtons = document.getElementsByClassName("navButton");
+    let navButtons = document.getElementsByClassName('navButton');
     for (let i of navButtons) {
-        if (i.classList.contains("navActive")) {
-            i.classList.remove("navActive");
+        if (i.classList.contains('navActive')) {
+            i.classList.remove('navActive');
         }
     }
     // Replace it with the newly selected one.
-    document.getElementById(buttonID).classList.add("navActive");
+    document.getElementById(buttonID).classList.add('navActive');
 }
 
 
@@ -43,9 +47,32 @@ function loadSection(url, buttonID) {
 }
 
 
-let f;
-function loadEntryForWorkSection(category, index) {
-    if (index < 0) {  // Basic error checking.
+function setActiveWorkNavButton(buttonIndex) {
+    // Remove the navActive class from the current active nav button.
+    let navListElements = document.getElementById('workNavList').children;
+    let navButtons = [];
+    for (let i of navListElements) {
+        if (i.nodeName == 'BUTTON') {
+            navButtons.push(i);
+        }
+    }
+    if (buttonIndex > navButtons.length - 1) {
+        console.warn('Invalid index for setActiveWorkNavButton!');
+    }
+    for (let i of navButtons) {
+        if (i.classList.contains('workNavActive')) {
+            i.classList.remove('workNavActive');
+        }
+    }
+    // Replace it with the newly selected one.
+    navButtons[buttonIndex].classList.add('workNavActive');
+}
+// Short alias for the function above:
+let setAWNB = (buttonIndex) => setActiveWorkNavButton(buttonIndex);
+
+
+function loadEntryForWorkSection(category, nextIndex) {
+    if (!nextIndex && workSectionIndex == 0) {  // Basic error checking.
         console.warn('Invalid work section index!');
         return;
     }
@@ -70,9 +97,9 @@ function loadEntryForWorkSection(category, index) {
             console.warn('Invalid work section category!');
             return;
     }
-    // This code below works similarly to the "loadSectionForBody" function.
+    // This code below works similarly to the 'loadSectionForBody' function.
     let request = makeHTTPObject();
-    request.open("GET", url, true);
+    request.open('GET', url, true);
     request.send(null);
     request.onreadystatechange = function() {
         if (request.readyState == 4) {
@@ -83,22 +110,32 @@ function loadEntryForWorkSection(category, index) {
             }
             contents = contents.split('<split>');
             console.log(contents);
-            if (index > contents.length - 1) {  // Index is greater than contents length...
+            if (workSectionIndex == contents.length - 1 && nextIndex) {
+                // Index would be greater than contents length...
                 console.warn('Invalid work section index!');
                 return;
             }
             var target = document.getElementById('workContents');
             f = contents;
-            target.outerHTML = contents[index];
+            // Increment or decrement workSectionIndex:
+            workSectionIndex = (nextIndex) ? workSectionIndex + 1 : workSectionIndex - 1;
+
+            // Replace #workContents with the content at the new work section index:
+            target.outerHTML = contents[workSectionIndex];
         }
     };
 }
 // Short alias for the function above:
-let loadWSE = (category, index) => loadEntryForWorkSection(category, index);
+let loadWSE = (category, nextIndex) => loadEntryForWorkSection(category, nextIndex);
+// Used by category nav buttons:
+let loadWSEDefault = (category) => {
+    workSectionIndex = -1;
+    loadEntryForWorkSection(category, true);
+}
 
 
 function workSectionAdvanceImageSlide(direction) {
-    let images = document.getElementById("workProjectCurrImage");
+    let images = document.getElementById('workProjectCurrImage');
     let newIndex = 0;
     let imageCt = images.children.length;
 
@@ -120,9 +157,9 @@ function workSectionAdvanceImageSlide(direction) {
 
 
 function workSectionSetActiveImageDot(index) {
-    let dots = document.getElementById("workProjectImageDotArray");
+    let dots = document.getElementById('workProjectImageDotArray');
     if ((index < 0) || (index >= dots.children.length)) {
-        console.warn("Invalid dot index for work section image dots!");
+        console.warn('Invalid dot index for work section image dots!');
         return;
     }
     let s = 'workProjectImageDotActive';
