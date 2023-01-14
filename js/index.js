@@ -48,6 +48,9 @@ function loadSection(url, buttonID) {
 
 
 function setActiveWorkNavButton(buttonIndex) {
+    if (buttonIndex < 0) {
+        console.warn('Invalid index for setActiveWorkNavButton!');
+    }
     // Remove the navActive class from the current active nav button.
     let navListElements = document.getElementById('workNavList').children;
     let navButtons = [];
