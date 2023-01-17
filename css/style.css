@@ -354,6 +354,31 @@ main {
   justify-content: space-between;
   overflow-y: auto;
 }
+#workOverviewTitle {
+  margin: 0 auto;
+}
+#workOverviewSubtext {
+  margin: 0.5em auto;
+}
+#workOverviewGrid {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  overflow: auto;
+}
+.workOverviewGridImage {
+  margin: 1vh;
+  width: 22vh;
+  height: 22vh;
+  background-color: #000;
+  border: 2px solid #000;
+  cursor: pointer;
+}
+.workOverviewGridImage img {
+  width: 22vh;
+  height: 22vh;
+  object-fit: cover;
+}
 #workProjectImageViewer {
   background-color: black;
   margin: 0 auto;

@@ -2,7 +2,7 @@
     <div id="workTitle">
         <div id="workTitleSide"><button class="workTitleSideButtonDisabled" disabled><p>PREV PROJECT<br>&lt;&lt;</p></button></div>
         <div id="workTitleText"><h1>This Website</h1><h2>(2023)</h2></div>
-        <div id="workTitleSide"><button class="workTitleSideButtonDisabled" disabled><p>NEXT PROJECT<br>&gt;&gt;</p></button></div>
+        <div id="workTitleSide"><button class="workTitleSideButton" onclick="loadWSE('softwareDev', true)"><p>NEXT PROJECT<br>&gt;&gt;</p></button></div>
     </div>
     <div id="workMain">
         <div id="workProjectImageViewer"> 
@@ -20,6 +20,38 @@
         <hr id="workProjectImageHR">
         <div id="workProjectDescription">
             <p>Holy cow, recursion! A custom-made single page application written entirely in vanilla JS/CSS/HTML.</p>
+        </div>
+        <hr id="workProjectImageHR">
+    </div>
+</div>
+
+
+<split>
+
+
+<div id="workContents">
+    <div id="workTitle">
+        <div id="workTitleSide"><button class="workTitleSideButton" onclick="loadWSE('softwareDev', false)"><p>PREV PROJECT<br>&lt;&lt;</p></button></div>
+        <div id="workTitleText"><h1>Image Scuzzer 2</h1><h2>(2019)</h2></div>
+        <div id="workTitleSide"><button class="workTitleSideButtonDisabled" disabled><p>NEXT PROJECT<br>&gt;&gt;</p></button></div>
+    </div>
+    <div id="workMain">
+        <div id="workProjectImageViewer">
+            <button id="workProjectImageNavButtonLeft" class="workProjectImageNavButton" onclick="workSectionAdvanceImageSlide(false)">❮</button>
+            <div id="workProjectCurrImage">
+                <img class="workProjectImageActive" src="./images/projects/ImageScuzzer1.png">
+            </div>
+            <button id="workProjectImageNavButtonRight" class="workProjectImageNavButton" onclick="workSectionAdvanceImageSlide(true)">❯</button>
+            <div id="workProjectImageDotArray">
+                <div id="workProjectImageDotActive" class="workProjectImageDot"></div>
+                <div class="workProjectImageDot"></div>
+                <div class="workProjectImageDot"></div>
+                <div class="workProjectImageDot"></div>
+            </div>
+        </div>
+        <hr id="workProjectImageHR">
+        <div id="workProjectDescription">
+            <p>An application for glitching/databending images. Written in C#.<br>You can find the project's repo <a href="https://github.com/Hexadecane/Image-Scuzzer-2">here.</a></p>
         </div>
         <hr id="workProjectImageHR">
     </div>

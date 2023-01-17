@@ -74,11 +74,7 @@ function setActiveWorkNavButton(buttonIndex) {
 let setAWNB = (buttonIndex) => setActiveWorkNavButton(buttonIndex);
 
 
-function loadEntryForWorkSection(category, nextIndex) {
-    if (!nextIndex && workSectionIndex == 0) {  // Basic error checking.
-        console.warn('Invalid work section index!');
-        return;
-    }
+function fetchWorkSectionCategoryURL(category) {
     let url;
     switch (category) {
         case 'graphicDesign':
@@ -98,8 +94,19 @@ function loadEntryForWorkSection(category, nextIndex) {
             break;
         default:
             console.warn('Invalid work section category!');
-            return;
+            return "error";
     }
+    return url;
+}
+
+
+function loadEntryForWorkSection(category, nextIndex) {
+    if (!nextIndex && workSectionIndex == 0) {  // Basic error checking.
+        console.warn('Invalid work section index!');
+        return;
+    }
+    let url = fetchWorkSectionCategoryURL(category);
+
     // This code below works similarly to the 'loadSectionForBody' function.
     let request = makeHTTPObject();
     request.open('GET', url, true);
@@ -134,6 +141,44 @@ let loadWSE = (category, nextIndex) => loadEntryForWorkSection(category, nextInd
 let loadWSEDefault = (category) => {
     workSectionIndex = -1;
     loadEntryForWorkSection(category, true);
+}
+
+
+// Used by overview buttons:
+function loadProjectInWorkSection(category, index) {
+    // Functions similarly to loadEntryForWorkSection, but for a specific project at a specific index.
+    workSectionIndex = index;
+    if (workSectionIndex < 0) {  // Basic error checking.
+        console.warn('Invalid work section index!');
+        return;
+    }
+    let url = fetchWorkSectionCategoryURL(category);
+
+    // This code below works similarly to the 'loadSectionForBody' function.
+    let request = makeHTTPObject();
+    request.open('GET', url, true);
+    request.send(null);
+    request.onreadystatechange = function() {
+        if (request.readyState == 4) {
+            var contents = request.responseText;
+            if (contents.length <= 0) {
+                console.warn('Contents failed to load, or HTML file was empty!');
+                return;
+            }
+            contents = contents.split('<split>');
+            console.log(contents);
+            if (workSectionIndex > contents.length - 1) {
+                // Index would be greater than contents length...
+                console.warn('Invalid work section index!');
+                return;
+            }
+            var target = document.getElementById('workContents');
+            f = contents;
+
+            // Replace #workContents with the content at the new work section index:
+            target.outerHTML = contents[workSectionIndex];
+        }
+    };
 }
 
 
