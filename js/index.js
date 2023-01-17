@@ -70,8 +70,6 @@ function setActiveWorkNavButton(buttonIndex) {
     // Replace it with the newly selected one.
     navButtons[buttonIndex].classList.add('workNavActive');
 }
-// Short alias for the function above:
-let setAWNB = (buttonIndex) => setActiveWorkNavButton(buttonIndex);
 
 
 function fetchWorkSectionCategoryURL(category) {
@@ -97,6 +95,12 @@ function fetchWorkSectionCategoryURL(category) {
             return "error";
     }
     return url;
+}
+
+
+function fetchWorkSectionCategoryNavIndex(c) {
+    let categories = ['graphicDesign', '2DArt', '3DArt', 'gameDev', 'softwareDev'];
+    return categories.indexOf(c);
 }
 
 
@@ -132,6 +136,10 @@ function loadEntryForWorkSection(category, nextIndex) {
 
             // Replace #workContents with the content at the new work section index:
             target.outerHTML = contents[workSectionIndex];
+
+            // Set the active work nav button after this:
+            let activeWorkNavButton = fetchWorkSectionCategoryNavIndex(category);
+            setActiveWorkNavButton(activeWorkNavButton);
         }
     };
 }
@@ -177,6 +185,10 @@ function loadProjectInWorkSection(category, index) {
 
             // Replace #workContents with the content at the new work section index:
             target.outerHTML = contents[workSectionIndex];
+            
+            // Set the active work nav button after this:
+            let activeWorkNavButton = fetchWorkSectionCategoryNavIndex(category);
+            setActiveWorkNavButton(activeWorkNavButton);
         }
     };
 }
