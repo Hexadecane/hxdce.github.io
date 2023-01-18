@@ -10,10 +10,14 @@
             <div id="workProjectCurrImage">
                 <img class="workProjectImageActive" src="./images/projects/PortfolioSite1.png">
                 <img class="workProjectImageInactive" src="./images/projects/PortfolioSite2.png">
+                <img class="workProjectImageInactive" src="./images/projects/PortfolioSite3.png">
+                <img class="workProjectImageInactive" src="./images/projects/PortfolioSite4.png">
             </div>
             <button id="workProjectImageNavButtonRight" class="workProjectImageNavButton" onclick="workSectionAdvanceImageSlide(true)">❯</button>
             <div id="workProjectImageDotArray">
                 <div id="workProjectImageDotActive" class="workProjectImageDot"></div>
+                <div class="workProjectImageDot"></div>
+                <div class="workProjectImageDot"></div>
                 <div class="workProjectImageDot"></div>
             </div>
         </div>
@@ -32,8 +36,8 @@
 <div id="workContents">
     <div id="workTitle">
         <div id="workTitleSide"><button class="workTitleSideButton" onclick="loadWSE('softwareDev', false)"><p>PREV PROJECT<br>&lt;&lt;</p></button></div>
-        <div id="workTitleText"><h1>Image Scuzzer 2</h1><h2>(2019)</h2></div>
-        <div id="workTitleSide"><button class="workTitleSideButtonDisabled" disabled><p>NEXT PROJECT<br>&gt;&gt;</p></button></div>
+        <div id="workTitleText"><h1>Image Scuzzer 2</h1><h2>(2019 - 2020)</h2></div>
+        <div id="workTitleSide"><button class="workTitleSideButton" onclick="loadWSE('softwareDev', true)"><p>NEXT PROJECT<br>&gt;&gt;</p></button></div>
     </div>
     <div id="workMain">
         <div id="workProjectImageViewer">
@@ -44,14 +48,42 @@
             <button id="workProjectImageNavButtonRight" class="workProjectImageNavButton" onclick="workSectionAdvanceImageSlide(true)">❯</button>
             <div id="workProjectImageDotArray">
                 <div id="workProjectImageDotActive" class="workProjectImageDot"></div>
-                <div class="workProjectImageDot"></div>
-                <div class="workProjectImageDot"></div>
-                <div class="workProjectImageDot"></div>
             </div>
         </div>
         <hr id="workProjectImageHR">
         <div id="workProjectDescription">
             <p>An application for glitching/databending images. Written in C#.<br>You can find the project's repo <a href="https://github.com/Hexadecane/Image-Scuzzer-2">here.</a></p>
+        </div>
+        <hr id="workProjectImageHR">
+    </div>
+</div>
+
+
+<split>
+
+
+<div id="workContents">
+    <div id="workTitle">
+        <div id="workTitleSide"><button class="workTitleSideButton" onclick="loadWSE('softwareDev', false)"><p>PREV PROJECT<br>&lt;&lt;</p></button></div>
+        <div id="workTitleText"><h1>Crystal Kana</h1><h2>(2019)</h2></div>
+        <div id="workTitleSide"><button class="workTitleSideButtonDisabled" disabled><p>NEXT PROJECT<br>&gt;&gt;</p></button></div>
+    </div>
+    <div id="workMain">
+        <div id="workProjectImageViewer">
+            <button id="workProjectImageNavButtonLeft" class="workProjectImageNavButton" onclick="workSectionAdvanceImageSlide(false)">❮</button>
+            <div id="workProjectCurrImage">
+                <img class="workProjectImageActive" src="./images/projects/CrystalKana1.png">
+                <img class="workProjectImageInactive" src="./images/projects/CrystalKana2.png">
+            </div>
+            <button id="workProjectImageNavButtonRight" class="workProjectImageNavButton" onclick="workSectionAdvanceImageSlide(true)">❯</button>
+            <div id="workProjectImageDotArray">
+                <div id="workProjectImageDotActive" class="workProjectImageDot"></div>
+                <div class="workProjectImageDot"></div>
+            </div>
+        </div>
+        <hr id="workProjectImageHR">
+        <div id="workProjectDescription">
+            <p>A flashcard web app for the Japanese kana writing system. Written in HTML5/SCSS/React.js.<br> The app begins with a syllable in romaji, then reveals its corresponding kana symbol.<br> You can find the project's source code <a href="https://codepen.io/Hxdce/pen/omgReb">here.</a></p>
         </div>
         <hr id="workProjectImageHR">
     </div>
