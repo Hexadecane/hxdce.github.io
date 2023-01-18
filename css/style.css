@@ -237,12 +237,19 @@ main {
   flex-direction: column;
   justify-content: center;
 }
+#workSection a {
+  color: #00c7fd;
+  transition: 100ms;
+}
+#workSection a:hover {
+  color: #FFF;
+}
 #workNavList {
   background-color: #000;
   list-style: none;
   height: 3em;
   width: auto;
-  margin: 0.75em auto 0.25em auto;
+  margin: 0.5em auto 0.25em auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -268,6 +275,9 @@ main {
   width: auto;
   border: none;
   cursor: pointer;  
+}
+.workNavBR {
+  display: none;
 }
 .workNavVL {
   border-left: 1px solid #b3b3b3;
@@ -484,7 +494,7 @@ main {
   list-style-position: inside;
 }
 .workProjectGenericUL li {
-  margin: 0.15em auto 0.15em ;
+  margin: 0.15em auto 0.15em;
 }
 @media (max-width: 1250px) {
   .workProjectGenericUL {
@@ -492,6 +502,12 @@ main {
   }
 }
 @media (max-width: 1038px) {
+  #workNavList li {
+    font-size: 0.85em;
+  }
+  #workTitleSide p {
+    font-size: 0.8em;
+  }
   .workProjectGenericUL {
     width: 60vw;
   }
@@ -504,8 +520,25 @@ main {
   #workTitle {
     width: 80vw;
   }
+  #workTitleText h1 {
+    font-size: 1.33em;
+  }
+  #workTitleText h2 {
+    font-size: 0.67em;
+  }
 }
 @media (max-width: 800px) {
+  #workNavList {
+    width: 100%;
+  }
+  #workNavList li {
+    font-size: 0.7em;
+    margin: 0;
+    width: calc(20vw - 1px);
+  }
+  .workNavBR {
+    display: block;
+  }
   #workMain {
     width: 100vw;
   }
