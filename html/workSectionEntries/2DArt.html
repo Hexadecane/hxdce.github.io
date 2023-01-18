@@ -1,6 +1,37 @@
 <div id="workContents">
     <div id="workTitle">
         <div id="workTitleSide"><button class="workTitleSideButtonDisabled" disabled><p>PREV PROJECT<br>&lt;&lt;</p></button></div>
+        <div id="workTitleText"><h1>Commissioned Work - Pixel Art</h1><h2>(2019 - 2023)</h2></div>
+        <div id="workTitleSide"><button class="workTitleSideButton" onclick="loadWSE('2DArt', true)"><p>NEXT PROJECT<br>&gt;&gt;</p></button></div>
+    </div>
+    <div id="workMain">
+        <div id="workProjectImageViewer">
+            <button id="workProjectImageNavButtonLeft" class="workProjectImageNavButton" onclick="workSectionAdvanceImageSlide(false)">❮</button>
+            <div id="workProjectCurrImage">
+                <img class="workProjectImageActive" src="./images/projects/2DArt/AlbumArtSpaceship.png">
+                <img class="workProjectImageInactive" src="./images/projects/2DArt/AudioRushFinal2x.png">
+            </div>
+            <button id="workProjectImageNavButtonRight" class="workProjectImageNavButton" onclick="workSectionAdvanceImageSlide(true)">❯</button>
+            <div id="workProjectImageDotArray">
+                <div id="workProjectImageDotActive" class="workProjectImageDot"></div>
+                <div class="workProjectImageDot"></div>
+            </div>
+        </div>
+        <hr id="workProjectImageHR">
+        <div id="workProjectDescription">
+            <p>Some highlights of pixel art commissions for clients.<br>Mostly created in <a href="https://www.aseprite.org/">Aseprite.</a></p>
+        </div>
+        <hr id="workProjectImageHR">
+    </div>
+</div>
+
+
+<split>
+
+
+<div id="workContents">
+    <div id="workTitle">
+        <div id="workTitleSide"><button class="workTitleSideButton" onclick="loadWSE('2DArt', false)"><p>PREV PROJECT<br>&lt;&lt;</p></button></div>
         <div id="workTitleText"><h1>Personal Work - Pixel Art</h1><h2>(2018 - 2023)</h2></div>
         <div id="workTitleSide"><button class="workTitleSideButton" onclick="loadWSE('2DArt', true)"><p>NEXT PROJECT<br>&gt;&gt;</p></button></div>
     </div>
@@ -25,7 +56,7 @@
         </div>
         <hr id="workProjectImageHR">
         <div id="workProjectDescription">
-            <p>An assortment of personal work highlights with pixel art from over the years. Mostly created in Aseprite.</p>
+            <p>An assortment of personal work and practice highlights from over the years. Mostly created in <a href="https://www.aseprite.org/">Aseprite.</a></p>
         </div>
         <hr id="workProjectImageHR">
     </div>
@@ -64,7 +95,7 @@
         </div>
         <hr id="workProjectImageHR">
         <div id="workProjectDescription">
-            <p>Blah blah blah Lorem Ipsum something something (you get the idea)...</p>
+            <p>An assortment of glitch artwork highlights from over the years.<br>Created with a mixture of self-programmed image glitching software and photo manipulation.</p>
         </div>
         <hr id="workProjectImageHR">
     </div>
