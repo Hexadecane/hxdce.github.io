@@ -17,7 +17,6 @@ html, body {
 
 /* General purpose classes: */
 
-
 .imgFlipHorz {
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
@@ -373,14 +372,19 @@ main {
   background-color: #000;
   border: 2px solid #000;
   cursor: pointer;
+  transition: 150ms;
 }
 .workOverviewGridImage img {
   width: 22vh;
   height: 22vh;
   object-fit: cover;
 }
+.workOverviewGridImage:hover {
+  background-color:#67686a;
+  border: 2px solid #67686a;
+}
 #workProjectImageViewer {
-  background-color: black;
+  background-color: #000;
   margin: 0 auto;
   width: 95%;
   height: 60vh;
@@ -482,6 +486,7 @@ main {
 .workProjectGenericUL li {
   margin: 0.15em auto;
 }
+
 
 /* Info section: */
 
@@ -624,6 +629,7 @@ main {
     width: 75%;
   }
 }
+
 
 /* Footer: */
 
