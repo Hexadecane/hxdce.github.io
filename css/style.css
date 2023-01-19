@@ -581,8 +581,8 @@ main {
 }
 #infoSection h1 {
   font-weight: normal;
-  margin-top: 0.67em;
-  margin-bottom: 0.33em;
+  margin: 0.67em auto 0.33em auto;
+  width: 80%;
 }
 .infoSectionSubsection {
   padding: 0 2em 2em 2em;
