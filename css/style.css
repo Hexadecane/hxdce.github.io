@@ -319,7 +319,7 @@ main {
   margin: 0 auto;
 }
 #workTitleSide {
-  width: 15%;
+  width: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -339,7 +339,7 @@ main {
   height: 100%;
   color: #00c7fd;
   transition: 150ms;
-  padding: 0;
+  padding: 0 1em;
 }
 .workTitleSideButton:hover {
   background-color: #414245;
