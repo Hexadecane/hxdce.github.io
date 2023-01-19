@@ -253,6 +253,9 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+#workNavHR {
+  margin: 0.5em auto;
   padding: 0;
 }
 #workNavList li {
@@ -476,7 +479,7 @@ main {
 #workProjectImageDotActive {
   opacity: 0.9 !important;
 }
-#workProjectImageHR {
+.workProjectImageHR {
   width: 95%;
 }
 #workProjectDescription {
