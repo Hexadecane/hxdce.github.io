@@ -19,7 +19,7 @@ function makeHTTPObject() {
         return new ActiveXObject('Microsoft.XMLHTTP');
     }
     catch (error) {
-        
+
     }
 
     throw new Error('Could not create HTTP request object.');
@@ -207,6 +207,7 @@ function loadProjectInWorkSection(category, index) {
 
 
 function workSectionAdvanceImageSlide(direction) {
+    // For advancing to the next image in the image slideshow/carousel.
     let images = document.getElementById('workProjectCurrImage');
     let newIndex = 0;
     let imageCt = images.children.length;
