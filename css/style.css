@@ -1,17 +1,47 @@
-html, body {
-  background-color: #000 !important;
-  font-family: "Liberation Mono";
-  color: #FFF !important;
-  margin: 0;
-  padding: 0;
-}
-
-
 /* Fonts: */
 
 @font-face {
   font-family: AlteDIN;
-  src: url("../fonts/din1451alt.ttf");
+  src: url("../fonts/din1451alt.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: LiberationMono;
+  src: url("../fonts/LiberationMono-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: LiberationMono;
+  src: url("../fonts/LiberationMono-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: LiberationMono;
+  src: url("../fonts/LiberationMono-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: LiberationMono;
+  src: url("../fonts/LiberationMono-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+
+/* Html/body: */
+
+html, body {
+  background-color: #000 !important;
+  font-family: LiberationMono, 'Courier New', Courier, monospace;
+  color: #FFF !important;
+  margin: 0;
+  padding: 0;
 }
 
 
