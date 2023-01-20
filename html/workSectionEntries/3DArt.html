@@ -1,8 +1,8 @@
 <div id="workContents">
     <div id="workTitle">
         <div id="workTitleSide"><button class="workTitleSideButtonDisabled" disabled><p>PREV PROJECT<br>&lt;&lt;</p></button></div>
-        <div id="workTitleText"><h1>Personal Work - Hard Surface Modeling</h1><h2>(2021 - 2023)</h2></div>
-        <div id="workTitleSide"><button class="workTitleSideButtonDisabled" disabled><p>NEXT PROJECT<br>&gt;&gt;</p></button></div>
+        <div id="workTitleText"><h1>Personal Work - Hard Surface Modeling</h1><h2>(2020 - 2023)</h2></div>
+        <div id="workTitleSide"><button class="workTitleSideButton" onclick="loadWSE('3DArt', true)"><p>NEXT PROJECT<br>&gt;&gt;</p></button></div>
     </div>
     <div id="workMain">
         <div id="workProjectImageViewer">
@@ -22,6 +22,35 @@
         <hr class="workProjectImageHR">
         <div id="workProjectDescription">
             <p>An assortment of personal work and practice highlights from over the years. Created in Blender.</p>
+        </div>
+        <hr class="workProjectImageHR">
+    </div>
+</div>
+
+
+<split>
+
+
+<div id="workContents">
+    <div id="workTitle">
+        <div id="workTitleSide"><button class="workTitleSideButton" onclick="loadWSE('3DArt', false)"><p>PREV PROJECT<br>&lt;&lt;</p></button></div>
+        <div id="workTitleText"><h1>Commissioned Work - 3D Modeling</h1><h2>(2020 - 2023)</h2></div>
+        <div id="workTitleSide"><button class="workTitleSideButtonDisabled" disabled><p>NEXT PROJECT<br>&gt;&gt;</p></button></div>
+    </div>
+    <div id="workMain">
+        <div id="workProjectImageViewer">
+            <button id="workProjectImageNavButtonLeft" class="workProjectImageNavButton" onclick="workSectionAdvanceImageSlide(false)">❮</button>
+            <div id="workProjectCurrImage">
+                <img class="workProjectImageActive" src="./images/projects/3DArt/PlagueNexusCommissions.png">
+            </div>
+            <button id="workProjectImageNavButtonRight" class="workProjectImageNavButton" onclick="workSectionAdvanceImageSlide(true)">❯</button>
+            <div id="workProjectImageDotArray">
+                <div id="workProjectImageDotActive" class="workProjectImageDot"></div>
+            </div>
+        </div>
+        <hr class="workProjectImageHR">
+        <div id="workProjectDescription">
+            <p>Some highlights of 3D Modeling commissions for clients.</p>
         </div>
         <hr class="workProjectImageHR">
     </div>
