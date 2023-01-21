@@ -135,7 +135,7 @@ function loadEntryForWorkSection(category, nextIndex) {
                 return;
             }
             contents = contents.split('<split>');
-            console.log(contents);
+            //console.log(contents);
             if (workSectionIndex == contents.length - 1 && nextIndex) {
                 // Index would be greater than contents length...
                 console.warn('Invalid work section index!');
@@ -186,7 +186,7 @@ function loadProjectInWorkSection(category, index) {
                 return;
             }
             contents = contents.split('<split>');
-            console.log(contents);
+            //console.log(contents);
             if (workSectionIndex > contents.length - 1) {
                 // Index would be greater than contents length...
                 console.warn('Invalid work section index!');
